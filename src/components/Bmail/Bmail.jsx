@@ -19,6 +19,7 @@ import Accordion from "./Accordion/Accordion.jsx";
 
 const Bmail = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [mobile, setMobile] = useState(false);
 
   const handleNext = () => {
     setCurrentImage((currentImage + 1) % Data.length);
@@ -29,7 +30,6 @@ const Bmail = () => {
   };
   return (
     <>
-
       {/* navbar */}
       <div className="bg-white shadow-xl flex justify-between flex-row items-center py-[1rem] px-[1rem] sm:px-[2rem] sticky top-0 z-30">
         <div>
@@ -46,10 +46,26 @@ const Bmail = () => {
         </div>
 
         <div className="block sm:hidden">
-          <img src={Ham} alt="" className="w-[2rem] h-[2rem]" />
+          <img
+            src={Ham}
+            alt=""
+            className="w-[2rem] h-[2rem]"
+            onClick={() => setMobile(!mobile)}
+          />
         </div>
       </div>
 
+      {/* hamburger nav */}
+      {mobile && (
+        <div className="flex sm:hidden flex-row md:gap-[4rem] gap-[2rem] justify-center mt-[2rem]">
+          <button className="border-2 border-solid border-black py-3 px-6 rounded-md font-sans font-bold cursor-pointer hover:bg-black hover:text-white">
+            Sign In
+          </button>
+          <button className="bg-blue-500 text-white p-[0.5rem] rounded-md font-sans font-bold cursor-pointer ">
+            Create an Account
+          </button>
+        </div>
+      )}
 
       {/* second section with slider */}
       <div className="py-[2rem] flex flex-col lg:flex-row justify-center items-center gap-[2rem] sm:p-[2rem]">
@@ -95,7 +111,6 @@ const Bmail = () => {
           </button>
         </div>
       </div>
-
 
       {/* ai with bmail section */}
       <div className="mt-[4rem]">
@@ -144,7 +159,6 @@ const Bmail = () => {
           </div>
         </div>
       </div>
-
 
       {/* next to ai with bmail */}
       <div className="mt-[4rem]">
@@ -205,7 +219,6 @@ const Bmail = () => {
         </div>
       </div>
 
-
       {/* app download section */}
       <div className="bg-orange-300 mt-[2rem] py-[4rem] px-[5px]">
         <h2 className="text-white text-center font-sans font-bold text-[2rem] sm:text-[2.5rem]">
@@ -220,7 +233,6 @@ const Bmail = () => {
           </button>
         </div>
       </div>
-
 
       {/* Best Features Section */}
       <div className="bg_bmail mt-[4rem] py-[4rem] px-[1rem] sm:px-[2rem] md:p-[4rem] text-zinc-900">
@@ -268,10 +280,8 @@ const Bmail = () => {
         </div>
       </div>
 
-
       {/* FAQ section */}
       <Accordion />
-
 
       {/* show world section */}
       <div className="flex flex-col justify-center items-center my-[4rem]">
@@ -288,7 +298,6 @@ const Bmail = () => {
           Create an Account
         </button>
       </div>
-
 
       {/* Footer section */}
       <div className="bg-zinc-900 text-white flex flex-col lg:flex-row py-[3rem] px-[1rem] lg:px-[6rem] items-center">
@@ -326,13 +335,12 @@ const Bmail = () => {
                 <p>Bmail Services</p>
               </li>
               <li className="flex items-center mt-[10px] gap-[10px]">
-                <p>info@bmailservices.com</p>
+                <p>info@bmail.biz</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
-
 
       {/* copyright section */}
       <div className="bg-zinc-700 text-center font-sans font-semibold p-[15px]">
