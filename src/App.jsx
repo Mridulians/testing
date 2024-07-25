@@ -1,9 +1,11 @@
-import Bmail from "./components/Bmail/Bmail";
+import Sidebar from "./components/BConnect/Sidebar";
+// import Bmail from "./components/Bmail/Bmail";
 
 const App = () => {
   return (
     <div>
-      <Bmail />
+      {/* <Bmail /> */}
+      <Sidebar />
     </div>
   );
 };
